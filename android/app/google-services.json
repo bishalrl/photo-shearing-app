@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "358200495080",
+    "project_id": "pintrest-370d5",
+    "storage_bucket": "pintrest-370d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358200495080:android:f181279358088c5d30325d",
+        "android_client_info": {
+          "package_name": "Bishal.pinterest_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358200495080-vhlmanmkn3cns7sj2kg3t0aqagemncou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiQ4qfBYESq84Vj4ePHE7da1Jj1TTMLRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358200495080-vhlmanmkn3cns7sj2kg3t0aqagemncou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
