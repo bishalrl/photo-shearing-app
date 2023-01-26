@@ -2,10 +2,10 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class Account_check extends StatelessWidget {
+class Account_Check extends StatelessWidget {
   final bool login;
   final VoidCallback press;
-  Account_check({required this.login, required this.press});
+  Account_Check({required this.login, required this.press});
 
   @override
   Widget build(BuildContext context) {
@@ -14,26 +14,26 @@ class Account_check extends StatelessWidget {
       children: [
         Text(
           login ? "Don't have an account" : "Alredy have an account",
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             color: Colors.white,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         GestureDetector(
           onTap: press,
           child: Text(
             login ? "Create Account" : "Log in",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Colors.blue,
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 40,
         )
       ],

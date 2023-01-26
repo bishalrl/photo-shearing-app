@@ -6,8 +6,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:pinterest_demo/Home_screen/Home_Screen.dart';
+import 'package:pinterest_demo/Random/Add.dart';
 import 'package:pinterest_demo/Widgits/button.dart';
 import 'package:pinterest_demo/Widgits/inputfield.dart';
+import 'package:pinterest_demo/account_check/Account_check.dart';
+import 'package:pinterest_demo/login/loginscreen.dart';
 
 class Information extends StatefulWidget {
   @override
@@ -115,7 +119,7 @@ class _InformationState extends State<Information> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(50),
+      padding: const EdgeInsets.all(50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -132,7 +136,7 @@ class _InformationState extends State<Information> {
               radius: 100,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           InputField(
@@ -168,7 +172,7 @@ class _InformationState extends State<Information> {
                   final ref = FirebaseStorage.instance
                       .ref()
                       .child('user Image')
-                      .child(DateTime.now().toString() + '.jpg');
+                      .child('${DateTime.now()}.jpg');
                   await ref.putFile(imageFile!);
                   imageUrl = await ref.getDownloadURL();
                   await _auth.createUserWithEmailAndPassword(
@@ -188,10 +192,21 @@ class _InformationState extends State<Information> {
                 } catch (error) {
                   Fluttertoast.showToast(msg: 'something went wrong');
                 }
+                //home page
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Home_Page()));
               },
               colors1: Colors.red,
               colors2: Colors.redAccent,
-              text: 'Create Account')
+              text: 'Create Account'),
+          Account_Check(
+              login: false,
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()));
+              }),
         ],
       ),
     );

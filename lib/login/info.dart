@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pinterest_demo/Home_screen/Home_Screen.dart';
+
+import 'package:pinterest_demo/Random/Add.dart';
 import 'package:pinterest_demo/Sign_up/Signup_Screen.dart';
 import 'package:pinterest_demo/Widgits/button.dart';
 import 'package:pinterest_demo/Widgits/inputfield.dart';
@@ -8,10 +9,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pinterest_demo/account_check/Account_check.dart';
 import 'package:pinterest_demo/forget_password/forget_password.dart';
 
-class InfoUser extends StatelessWidget {
+class InfoUser extends StatefulWidget {
+  @override
+  State<InfoUser> createState() => _InfoUserState();
+}
+
+class _InfoUserState extends State<InfoUser> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   final TextEditingController _emailtextcontroller =
       TextEditingController(text: '');
+
   final TextEditingController _passwordtextcontroller =
       TextEditingController(text: '');
 
@@ -30,7 +38,7 @@ class InfoUser extends StatelessWidget {
               backgroundColor: Colors.orange.shade800,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           InputField(
@@ -38,7 +46,7 @@ class InfoUser extends StatelessWidget {
               icon: Icons.email,
               obsecureText: false,
               textEditingController: _emailtextcontroller),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           InputField(
@@ -46,7 +54,7 @@ class InfoUser extends StatelessWidget {
               icon: Icons.password,
               obsecureText: true,
               textEditingController: _passwordtextcontroller),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -59,7 +67,7 @@ class InfoUser extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => Forget_Password()));
                 },
-                child: Text(
+                child: const Text(
                   "Forget Password",
                   style: TextStyle(
                     fontSize: 15,
@@ -70,7 +78,7 @@ class InfoUser extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Main_Button(
@@ -80,7 +88,7 @@ class InfoUser extends StatelessWidget {
                       email: _emailtextcontroller.text.trim(),
                       password: _passwordtextcontroller.text.trim());
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_Screen()));
+                      MaterialPageRoute(builder: (context) => Home_Page()));
                 } catch (e) {
                   Fluttertoast.showToast(msg: Error.safeToString('error'));
                 }
@@ -88,11 +96,13 @@ class InfoUser extends StatelessWidget {
               colors1: Colors.red,
               colors2: Colors.redAccent,
               text: 'LogIn'),
-          Account_check(
+          Account_Check(
             login: true,
             press: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Signup_Screen()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Signup_Screen()));
             },
             //signup screen
           ),

@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           gradient: LinearGradient(
               colors: [Colors.pink, Colors.orange],
               begin: Alignment.center,
@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Column(
-            children: [HeadText(), InfoUser()],
+            children: [const HeadText(), InfoUser()],
           ),
         ),
       ),

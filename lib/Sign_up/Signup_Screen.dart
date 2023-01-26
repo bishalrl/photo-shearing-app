@@ -13,7 +13,7 @@ class Signup_Screen extends StatelessWidget {
               colors: [Colors.pink, Colors.deepOrange.shade300],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              stops: [0.2, 0.9])),
+              stops: const [0.2, 0.9])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(

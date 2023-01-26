@@ -5,15 +5,15 @@ class HeadText extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       child: Column(
         children: [
           SizedBox(
             height: size.height * 0.05,
           ),
-          Center(
+          const Center(
             child: Text(
-              'PhotSharing',
+              'Pdf Sharing',
               style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
@@ -23,7 +23,7 @@ class HeadText extends StatelessWidget {
           SizedBox(
             height: size.height * 0.02,
           ),
-          Center(
+          const Center(
             child: Text(
               'Create Account',
               style: TextStyle(

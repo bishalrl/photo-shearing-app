@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pinterest_demo/Home_screen/Home_Screen.dart';
+import 'package:pinterest_demo/Random/Add.dart';
 import 'package:pinterest_demo/login/loginscreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +26,13 @@ class PinTerest extends StatelessWidget {
               home: Scaffold(body: Text('Error on photo shearing App')),
             );
           }
-          return const MaterialApp(
-            title: 'Photo Shearing Application',
-            home: LoginScreen(),
+          return Material(
+            child: MaterialApp(
+              home
+                  // : FirebaseAuth.instance.currentUser == null
+                  //     ? LoginScreen()
+                  : LoginScreen(),
+            ),
           );
         });
   }
